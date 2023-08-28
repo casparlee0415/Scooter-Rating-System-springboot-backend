@@ -23,6 +23,8 @@ public class BrandController{
 
     @GetMapping("/{id}")
     public ResponseEntity<Brand> findById(@PathVariable("id") Integer id){
-        return ResponseEntity.ok(brandService.findById(id));
+        Brand brand=brandService.findById(id);
+        if(brand==null) return ResponseEntity.notFound().build();
+        return ResponseEntity.ok(brand);
     }
 }

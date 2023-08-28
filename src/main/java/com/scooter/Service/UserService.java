@@ -19,7 +19,7 @@ public class UserService {
         return userDao.findById(id).orElse(null);
     }
 
-    public Integer findIdByEmail(String email){ return userDao.findIdByEmail(email); }
+    public Integer findIdByEmail(String email){ return userDao.findIdByEmail(email).orElse(null); }
 
     public User save(User user){
         return userDao.save(user);

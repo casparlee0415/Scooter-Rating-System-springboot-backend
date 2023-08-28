@@ -13,5 +13,5 @@ import java.util.Optional;
 public interface UserDao extends JpaRepository<User,Integer> {
 
     @Query("select u.id from User u where u.email = :email")
-    Integer findIdByEmail(@Param("email") String email);
+    Optional<Integer> findIdByEmail(@Param("email") String email);
 }
